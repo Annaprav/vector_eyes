@@ -54,7 +54,7 @@ def get_eye_coordinates(image, face_coordinates):
     eye_right_coordinate = [int(face_coordinates[43][0] + (face_coordinates[44][0] - face_coordinates[43][0]) / 2),
                             int(face_coordinates[43][1] + (face_coordinates[47][1] - face_coordinates[43][1]) / 2)]
 
-    # Читаем черные пиксели вокруг зрачков
+    # Читаем черные пиксели вокруг центра глаза
     left_black_pixels = read_specific_pixels(image, eye_left_coordinate,
                                               int((face_coordinates[38][0] - face_coordinates[37][0]) / 2))
     right_black_pixels = read_specific_pixels(image, eye_right_coordinate,
