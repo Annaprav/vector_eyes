@@ -31,7 +31,7 @@ if __name__ == '__main__':
     for face in faces:
         landmarks = frontal_face_predictor(image_gray, face)
         landmarks_points = [(landmarks.part(n).x, landmarks.part(n).y) for n in range(68)]
-        #Отримовка векторов взгялда
+        #Отриcовка векторов взгялда
         image = draw_vector(image,landmarks,landmarks_points)
 
  
