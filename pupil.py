@@ -44,9 +44,10 @@ def get_eye_coordinates(image, face_coordinates):
         left_black_pixels: Список черных пикселей вокруг левого зрачка.
         right_black_pixels: Список черных пикселей вокруг правого зрачка.
     """
-    # Вырезаем области глаз
+    # Вырезаем области глаз (по бровям)
+    # Границы по верхней точке брови и нижней точки глаза, по бокам область ограничена крайними точками глаз (с учетом этого берутся индексы)
     left_eye = image[face_coordinates[19][1]:face_coordinates[42][1], face_coordinates[36][0]:face_coordinates[39][0]]
-    right_eye = image[face_coordinates[19][1]:face_coordinates[42][1], face_coordinates[42][0]:face_coordinates[45][0]]
+    right_eye = image[face_coordinates[24][1]:face_coordinates[47][1], face_coordinates[42][0]:face_coordinates[45][0]]
 
     # Вычисляем координаты центров глаз
     eye_left_coordinate = [int(face_coordinates[37][0] + (face_coordinates[38][0] - face_coordinates[37][0]) / 2),

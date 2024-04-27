@@ -14,6 +14,7 @@ def draw_vector(image,landmarks,landmarks_points):
         right_pupil_point = get_pupil_point(right_eye, eye_right_black_pixels, right_eye_coord, eye_brow_coord)
 
         # Находим по 6 точек глаз
+        # для глаз это точки 36-41 и 42-47 (начиня с 0)
         left_eye_points = [(landmarks.part(n).x, landmarks.part(n).y) for n in range(36, 42)]
         right_eye_points = [(landmarks.part(n).x, landmarks.part(n).y) for n in range(42, 48)]
         
